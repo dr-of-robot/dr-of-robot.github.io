@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="We introduce a framework where robots learn in real-world settings to create and utilize paper-based tools for practical tasks.">
+  <meta name="keywords" content="Dr. Robot; Differentiable Rendering, Visual Foundation Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Differentiable Robot Rendering</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBXXY268VB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PBXXY268VB');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="assets/figures/paperplane.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- include image beside title -->
+          
+          <h1 class="title is-2"> Differentiable Robot Rendering </h1>
+          <!-- <h2 class="subtitle is-3">Differentiable Robot Rendering</h2> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous Authors
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- include png image instea of video -->
+      <img src="assets/figures/teaser.png"
+            alt="Differentiable Robot Rendering"
+            class="publication-banner">
+      <h2 class="subtitle has-text-centered">
+        We introduce Differentiable Rendering of Robots (Dr. Robot), a robot self-model which
+        is differentiable from its visual appearance to its control parameters. With it, we can perform control
+        and planning of robot actions through image gradients provided by visual foundation models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Vision foundation models trained on massive amounts of visual data have shown unprecedented reasoning and planning skills in open-world settings. A key challenge in applying them to robotic tasks is the modality gap between visual data and action data. We introduce differentiable robot rendering, a method allowing the visual appearance of a robot body to be directly differentiable with respect to its control parameters. Our model integrates a kinematics-aware deformable model and Gaussians Splatting and is compatible with any robot form factors and degrees of freedom. We demonstrate its capability and usage in applications including reconstruction of robot poses from images and controlling robots through vision language models. Quantitative and qualitative results show that our differentiable rendering model provides effective gradients for robotic control directly from pixels, setting the foundation for the future applications of vision foundation models in robotics.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <video id="paperbot-summary" controls playsinline height="100%">
+          <source src="assets/videos/video.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <div class="columns is-centered">
+        <div class="publication-banner">
+          <img src="assets/figures/method.jpg"
+                alt="method"
+                class="publication-banner">
+        </div>
+    </div>
+    <span class="dnerf-nocaps">
+      Our robot model is composed of 3 differentiable components.
+      Forward kinematics projects a pose vector into a skeleton, Implicit LBS projects 3D Gaussians to the
+      robot surface, and Appearance Deformation adjusts appearance of 3D Gaussians.
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3 has-text-centered">Rendering Quality</h2>
+
+    <div class="columns is-centered">
+        <div class="publication-banner">
+          <img src="assets/figures/rendering.png"
+                alt="Rendering Quality"
+                class="publication-banner">
+        </div>
+    </div>
+    <span class="dnerf-nocaps">
+      Dr. Robot can be trained from the URDF file of any robot across various form factors and any number of degrees of freedom.
+    </span>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-3 has-text-centered">Motion Retargetting</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-azure_web">
+          <video poster="" id="azure_web" autoplay controls muted loop playsinline height="100%" width="75%">
+            <source src="./assets/videos/reconstruction/azure_web.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-kinect_web">
+          <video poster="" id="kinect_web" autoplay controls muted loop playsinline height="100%" width="75%">
+            <source src="./assets/videos/reconstruction/kinect_web.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-realsense_web">
+          <video poster="" id="realsense_web" autoplay controls muted loop playsinline height="100%" width="75%">
+            <source src="./assets/videos/reconstruction/realsense_web.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <span class="dnerf-nocaps" style="display: block; text-align: center;">
+      Generated Video (Top) + Robot Execution (Bottom).
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Single View Inverse Dynamics</h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%" width="70%">
+        <source src="assets/videos/reconstruction/azure.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <span class="dnerf-nocaps" style="display: block; text-align: center;">
+    From an input video (left), we perform optimization to reconstruct the joint angles of the robot and re-render the robot (right).
+  </span>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Visual MPC</h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%" width="70%">
+        <source src="assets/videos/visualMPC_cropped.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div style="width: 60%; margin: 0 auto; text-align: center;">
+    <span class="dnerf-nocaps" style="display: block;">
+      We perform optimization of joint angles of a Shadow
+      Hand to maximize the CLIP similarity between the rendered image and text prompt.
+      We show the optimization process (left) as well as final outputs of different prompts (right).
+    </span>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Planning with Text2Video Model</h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%" width="70%">
+        <source src="assets/videos/asut2v_cropped.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div style="width: 60%; margin: 0 auto; text-align: center;">
+    <span class="dnerf-nocaps" style="display: block; text-align: center;">
+      We show that robot actions can be extracted from videos predicted by a finetuned text-to-video model and be executed for robot control to achieve language-conditioned robot planning.
+    </span>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <!-- add a title -->
+    <h2 class="title is-3 has-text-centered">Motion Retargetting</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-hand_1">
+          <video poster="" id="hand_1" autoplay controls muted loop playsinline height="100%" width="75%">
+            <source src="./assets/videos/hand_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-hand_2">
+          <video poster="" id="hand_2" autoplay controls muted loop playsinline height="100%" width="75%">
+            <source src="./assets/videos/hand_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-body_1">
+          <video poster="" id="body_1" autoplay controls muted loop playsinline height="100%" width="75%">
+            <source src="./assets/videos/body_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-body_2">
+          <video poster="" id="body_2" autoplay controls muted loop playsinline height="100%" width="75%">
+            <source src="./assets/videos/body_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <!-- add bigger subtitle -->
+    <div style="width: 60%; margin: 0 auto; text-align: center;">
+      <span class="dnerf-nocaps" style="display: block; text-align: center;">
+        We perform optimization on robot
+        action trajectories to minimize the chamfer distance between the point tracks in the rendered video
+        and a demonstration video, allowing us to transfer motion across the embodiment gap.
+      </span>
+    </div>
+</section>
+
+</body>
+</html>
